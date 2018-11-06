@@ -49,7 +49,8 @@ manipulate however you wish. For example, here we dilate it with
 
     >>> import scipy.ndimage
     >>> scipy.ndimage.binary_dilation(model.data.copy(), output=model.data)
-    >>> model.write('dilated.binvox')
+    >>> with open('dilated.binvox', 'wb') as f:
+        ...     model.write(f)
 
 Then we get a fat chair:
 
